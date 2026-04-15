@@ -1,0 +1,8 @@
+numpy>=1.26,<3
+pm4py>=2.7,<3
+optuna>=3.5,<5
+websockets>=12,<15
+kafka-python-ng>=2.0,<3
+dash>=2.14
+dash-cytoscape>=1.0
+dash-bootstrap-components>=1.5

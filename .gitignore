@@ -1,0 +1,6 @@
+/docs/2025_ICPM_KnowYourStreams/*
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.idea/         

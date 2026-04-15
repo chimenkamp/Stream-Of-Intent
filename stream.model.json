@@ -1,0 +1,166 @@
+{
+  "optimized_params": {
+    "model": {
+      "num_activities": 10,
+      "sequence_weight": 0.28056198652371694,
+      "parallel_weight": 0.2666027261433452,
+      "loop_weight": 0.2948979317200363,
+      "choice_weight": 0.14986494488587554,
+      "nesting_depth": 5,
+      "loop_probability": 0.07065889769888775,
+      "skip_connection_probability": 0.4971855112945805,
+      "silent_transition_probability": 0.2333115125072698
+    },
+    "simulation": {
+      "markov_order": 1,
+      "case_arrival_rate": 0.23691917666135737,
+      "mean_activity_duration": 13.360264200533592,
+      "duration_variance_factor": 2.6483829603999687,
+      "max_concurrent_cases": 18,
+      "subprocess_probability": 0.3390186528157752,
+      "subprocess_temporal_scale": 0.20659636620055466,
+      "subprocess_max_depth": 1,
+      "context_sensitivity": 0.20857205125446615
+    },
+    "postprocessor": {
+      "ooo_fraction": 0.7241389977474091,
+      "ooo_max_displacement": 30.658200987334087,
+      "fractal_scale_factor": 0.8245909369095963,
+      "fractal_replication_probability": 0.05871746103660513
+    }
+  },
+  "static_params": {
+    "window_size": 1000,
+    "num_activities": 10,
+    "stream_length": 5000,
+    "num_windows_for_evaluation": 5,
+    "random_seed": 42
+  },
+  "activities": [
+    "a",
+    "b",
+    "c",
+    "e",
+    "g",
+    "k",
+    "l",
+    "m",
+    "n",
+    "q"
+  ],
+  "transition_matrices": {
+    "1": {
+      "__START__": {
+        "b": 0.25,
+        "g": 0.225,
+        "l": 0.2,
+        "n": 0.12,
+        "m": 0.11,
+        "a": 0.095
+      },
+      "b": {
+        "e": 0.6,
+        "__END__": 0.4
+      },
+      "e": {
+        "__END__": 1.0
+      },
+      "g": {
+        "k": 0.11267605633802817,
+        "a": 0.1643192488262911,
+        "__END__": 0.20657276995305165,
+        "q": 0.39436619718309857,
+        "c": 0.12206572769953052
+      },
+      "k": {
+        "g": 0.5283018867924528,
+        "l": 0.39622641509433965,
+        "a": 0.07547169811320754
+      },
+      "a": {
+        "q": 0.34615384615384615,
+        "__END__": 0.23076923076923078,
+        "l": 0.17307692307692307,
+        "c": 0.038461538461538464,
+        "g": 0.18269230769230768,
+        "k": 0.028846153846153848
+      },
+      "q": {
+        "g": 0.49282296650717705,
+        "l": 0.45454545454545453,
+        "a": 0.05263157894736842
+      },
+      "l": {
+        "a": 0.16,
+        "__END__": 0.18,
+        "k": 0.13,
+        "c": 0.085,
+        "q": 0.445
+      },
+      "n": {
+        "m": 0.5217391304347826,
+        "__END__": 0.4782608695652174
+      },
+      "m": {
+        "__END__": 0.5217391304347826,
+        "n": 0.4782608695652174
+      },
+      "c": {
+        "l": 0.5531914893617021,
+        "g": 0.3829787234042553,
+        "a": 0.06382978723404255
+      }
+    }
+  },
+  "subprocess_activities": [
+    "a",
+    "b",
+    "k",
+    "m",
+    "n"
+  ],
+  "subprocess_transition_matrices": {
+    "1": {
+      "__START__": {
+        "n": 1.0
+      },
+      "n": {
+        "b": 1.0
+      },
+      "b": {
+        "k": 1.0
+      },
+      "k": {
+        "a": 1.0
+      },
+      "a": {
+        "m": 1.0
+      },
+      "m": {
+        "__END__": 1.0
+      }
+    }
+  },
+  "metadata": {
+    "spec": {
+      "temporal_dependency": {
+        "type": "target",
+        "value": 0.7
+      },
+      "long_term_dependency": {
+        "type": "symbol"
+      },
+      "non_linear_dependency": {
+        "type": "symbol"
+      },
+      "out_of_order": {
+        "type": "symbol"
+      },
+      "fractal_behavior": {
+        "type": "symbol"
+      }
+    },
+    "best_distance": 0.006633185391542784,
+    "generation_timestamp": 1776255788.31559
+  }
+}

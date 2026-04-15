@@ -1,0 +1,661 @@
+/* ==========================================================================
+   Stream of Intent — NORD colour scheme
+   https://www.nordtheme.com/docs/colors-and-palettes
+   ==========================================================================
+
+   Polar Night  (backgrounds)
+     nord0  #2E3440   nord1  #3B4252   nord2  #434C5E   nord3  #4C566A
+
+   Snow Storm  (text / foreground)
+     nord4  #D8DEE9   nord5  #E5E9F0   nord6  #ECEFF4
+
+   Frost  (accents / primary)
+     nord7  #8FBCBB   nord8  #88C0D0   nord9  #81A1C1   nord10 #5E81AC
+
+   Aurora  (status / highlights)
+     nord11 #BF616A  (red)     nord12 #D08770  (orange)
+     nord13 #EBCB8B  (yellow)  nord14 #A3BE8C  (green)
+     nord15 #B48EAD  (purple)
+   ========================================================================== */
+
+:root {
+    --nord0:  #2E3440;
+    --nord1:  #3B4252;
+    --nord2:  #434C5E;
+    --nord3:  #4C566A;
+    --nord4:  #D8DEE9;
+    --nord5:  #E5E9F0;
+    --nord6:  #ECEFF4;
+    --nord7:  #8FBCBB;
+    --nord8:  #88C0D0;
+    --nord9:  #81A1C1;
+    --nord10: #5E81AC;
+    --nord11: #BF616A;
+    --nord12: #D08770;
+    --nord13: #EBCB8B;
+    --nord14: #A3BE8C;
+    --nord15: #B48EAD;
+}
+
+/* ---- Global ----------------------------------------------------------- */
+body {
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif !important;
+    background-color: var(--nord0) !important;
+    color: var(--nord4) !important;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Override Bootstrap Darkly where it conflicts with NORD */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.modal-backdrop.show {
+    opacity: 1 !important;
+}
+
+.modal-dialog {
+    z-index: 1055;
+}
+
+#app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ---- Sidebar ---------------------------------------------------------- */
+#sidebar {
+    width: 240px;
+    min-width: 240px;
+    background-color: var(--nord1);
+    padding: 1.25rem 0;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--nord2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    overflow-y: auto;
+}
+
+#sidebar .brand {
+    padding: 0 1.25rem 1.25rem;
+    border-bottom: 1px solid var(--nord2);
+    margin-bottom: 0.75rem;
+}
+
+#sidebar .brand h4 {
+    color: var(--nord8);
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin: 0;
+    letter-spacing: 0.02em;
+}
+
+#sidebar .brand small {
+    color: var(--nord3);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+}
+
+.nav-link {
+    color: var(--nord4) !important;
+    padding: 0.6rem 1.25rem !important;
+    font-size: 0.88rem;
+    border-left: 3px solid transparent;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.nav-link:hover {
+    background-color: var(--nord2);
+    color: var(--nord6) !important;
+}
+
+.nav-link.active {
+    color: var(--nord8) !important;
+    background-color: rgba(136, 192, 208, 0.08);
+    border-left-color: var(--nord8);
+    font-weight: 600;
+}
+
+.nav-icon {
+    font-size: 1.05rem;
+    width: 1.4rem;
+    text-align: center;
+}
+
+/* ---- Main content ----------------------------------------------------- */
+#page-content {
+    margin-left: 240px;
+    padding: 1.5rem 2rem;
+    flex: 1;
+    min-height: 100vh;
+    background-color: var(--nord0);
+}
+
+/* ---- Cards ------------------------------------------------------------ */
+.nord-card {
+    background-color: var(--nord1);
+    border: 1px solid var(--nord2);
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.nord-card-header {
+    color: var(--nord8);
+    font-weight: 600;
+    font-size: 0.92rem;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px solid var(--nord2);
+    letter-spacing: 0.02em;
+}
+
+/* ---- Inputs / form controls ------------------------------------------- */
+.nord-input,
+.nord-select,
+.nord-textarea,
+.form-control,
+.form-select,
+input.form-control,
+textarea.form-control {
+    background-color: var(--nord0) !important;
+    border: 1px solid var(--nord3) !important;
+    color: var(--nord5) !important;
+    border-radius: 4px;
+    padding: 0.45rem 0.65rem;
+    font-size: 0.85rem;
+    transition: border-color 0.15s ease;
+}
+
+.nord-input:focus,
+.nord-select:focus,
+.nord-textarea:focus,
+.form-control:focus,
+.form-select:focus {
+    background-color: var(--nord0) !important;
+    border-color: var(--nord8) !important;
+    box-shadow: 0 0 0 2px rgba(136, 192, 208, 0.15) !important;
+    color: var(--nord5) !important;
+    outline: none;
+}
+
+.nord-input::placeholder,
+.form-control::placeholder {
+    color: var(--nord3) !important;
+}
+
+/* Bootstrap modal overrides */
+.modal-content {
+    background-color: var(--nord1) !important;
+    border-color: var(--nord2) !important;
+    color: var(--nord4) !important;
+}
+
+.modal-header {
+    border-color: var(--nord2) !important;
+}
+
+.modal-footer {
+    border-color: var(--nord2) !important;
+}
+
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* Dash dropdown overrides (react-select / VirtualizedSelect) */
+.Select-control,
+.dash-dropdown .Select-control,
+.VirtualizedSelectOption,
+.VirtualizedSelectFocusedOption {
+    background-color: var(--nord0) !important;
+    border-color: var(--nord3) !important;
+    color: var(--nord5) !important;
+}
+
+.Select-menu-outer,
+.dash-dropdown .Select-menu-outer,
+.VirtualizedSelectMenuOuter {
+    background-color: var(--nord1) !important;
+    border-color: var(--nord2) !important;
+}
+
+.Select-option,
+.dash-dropdown .Select-option,
+.VirtualizedSelectOption {
+    background-color: var(--nord1) !important;
+    color: var(--nord4) !important;
+}
+
+.Select-option.is-focused,
+.dash-dropdown .Select-option.is-focused,
+.VirtualizedSelectFocusedOption {
+    background-color: var(--nord2) !important;
+    color: var(--nord8) !important;
+}
+
+.Select-value-label,
+.Select-placeholder,
+.Select-input input,
+.dash-dropdown .Select-value-label,
+.dash-dropdown .Select-placeholder,
+.dash-dropdown .Select-input input {
+    color: var(--nord4) !important;
+}
+
+.Select-arrow-zone .Select-arrow {
+    border-color: var(--nord3) transparent transparent !important;
+}
+
+.Select-clear-zone .Select-clear {
+    color: var(--nord3) !important;
+}
+
+.Select.is-focused > .Select-control {
+    background-color: var(--nord0) !important;
+    border-color: var(--nord8) !important;
+}
+
+/* ---- Buttons ---------------------------------------------------------- */
+.btn-nord-primary {
+    background-color: var(--nord10) !important;
+    border-color: var(--nord10) !important;
+    color: var(--nord6) !important;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.5rem 1.1rem;
+    border-radius: 4px;
+    transition: all 0.15s ease;
+}
+
+.btn-nord-primary:hover {
+    background-color: var(--nord9) !important;
+    border-color: var(--nord9) !important;
+}
+
+.btn-nord-success {
+    background-color: var(--nord14) !important;
+    border-color: var(--nord14) !important;
+    color: var(--nord0) !important;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.5rem 1.1rem;
+    border-radius: 4px;
+}
+
+.btn-nord-success:hover {
+    opacity: 0.85;
+}
+
+.btn-nord-danger {
+    background-color: var(--nord11) !important;
+    border-color: var(--nord11) !important;
+    color: var(--nord6) !important;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.5rem 1.1rem;
+    border-radius: 4px;
+}
+
+.btn-nord-danger:hover {
+    opacity: 0.85;
+}
+
+.btn-nord-secondary {
+    background-color: var(--nord3) !important;
+    border-color: var(--nord3) !important;
+    color: var(--nord5) !important;
+    font-weight: 500;
+    font-size: 0.85rem;
+    padding: 0.5rem 1.1rem;
+    border-radius: 4px;
+}
+
+.btn-nord-secondary:hover {
+    background-color: var(--nord2) !important;
+}
+
+/* ---- Sliders ---------------------------------------------------------- */
+.rc-slider-rail {
+    background-color: var(--nord2) !important;
+}
+
+.rc-slider-track {
+    background-color: var(--nord8) !important;
+}
+
+.rc-slider-handle {
+    border-color: var(--nord8) !important;
+    background-color: var(--nord8) !important;
+}
+
+.rc-slider-handle:hover,
+.rc-slider-handle:active {
+    border-color: var(--nord9) !important;
+    box-shadow: 0 0 0 4px rgba(136, 192, 208, 0.2) !important;
+}
+
+/* ---- Labels ----------------------------------------------------------- */
+.form-label,
+.nord-label,
+label {
+    color: var(--nord5) !important;
+    font-size: 0.78rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+/* ---- Page titles ------------------------------------------------------ */
+.page-title {
+    color: var(--nord6);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.page-title .title-icon {
+    color: var(--nord8);
+}
+
+/* ---- Status badges ---------------------------------------------------- */
+.badge-nord-running {
+    background-color: var(--nord13);
+    color: var(--nord0);
+    font-weight: 600;
+    font-size: 0.72rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 3px;
+}
+
+.badge-nord-complete {
+    background-color: var(--nord14);
+    color: var(--nord0);
+    font-weight: 600;
+    font-size: 0.72rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 3px;
+}
+
+.badge-nord-error {
+    background-color: var(--nord11);
+    color: var(--nord6);
+    font-weight: 600;
+    font-size: 0.72rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 3px;
+}
+
+/* ---- Cytoscape graph container ---------------------------------------- */
+.cytoscape-container {
+    background-color: var(--nord0);
+    border: 1px solid var(--nord2);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* ---- DataTable overrides ---------------------------------------------- */
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner th {
+    background-color: var(--nord2) !important;
+    color: var(--nord8) !important;
+    border-color: var(--nord3) !important;
+    font-weight: 600;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner td {
+    background-color: var(--nord1) !important;
+    color: var(--nord4) !important;
+    border-color: var(--nord2) !important;
+    font-size: 0.82rem;
+}
+
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner td.focused {
+    background-color: var(--nord2) !important;
+    outline: 1px solid var(--nord8) !important;
+}
+
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner tr:hover td {
+    background-color: rgba(136, 192, 208, 0.06) !important;
+}
+
+/* Row selection */
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner tr.row--selected td {
+    background-color: rgba(94, 129, 172, 0.15) !important;
+}
+
+/* ---- Scrollbar -------------------------------------------------------- */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--nord0);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--nord3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--nord2);
+}
+
+/* ---- Tabs ------------------------------------------------------------- */
+.custom-tabs .tab {
+    border: none !important;
+    background-color: var(--nord1) !important;
+    color: var(--nord4) !important;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 0.6rem 1.1rem !important;
+}
+
+.custom-tabs .tab--selected {
+    background-color: var(--nord0) !important;
+    color: var(--nord8) !important;
+    border-bottom: 2px solid var(--nord8) !important;
+    font-weight: 600;
+}
+
+/* ---- Misc ------------------------------------------------------------- */
+.text-muted-nord {
+    color: var(--nord3) !important;
+    font-size: 0.78rem;
+}
+
+.divider-nord {
+    border-top: 1px solid var(--nord2);
+    margin: 1rem 0;
+}
+
+.metric-value {
+    color: var(--nord8);
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.metric-label {
+    color: var(--nord3);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/* ---- Plotly graph overrides ------------------------------------------- */
+.js-plotly-plot .plotly .modebar {
+    background-color: transparent !important;
+}
+
+.js-plotly-plot .plotly .modebar-btn path {
+    fill: var(--nord3) !important;
+}
+
+.js-plotly-plot .plotly .modebar-btn:hover path {
+    fill: var(--nord8) !important;
+}
+
+/* ---- Tooltips --------------------------------------------------------- */
+.nord-tooltip {
+    background-color: var(--nord2) !important;
+    color: var(--nord5) !important;
+    border: 1px solid var(--nord3) !important;
+    border-radius: 4px;
+    padding: 0.35rem 0.65rem;
+    font-size: 0.78rem;
+}
+
+/* ---- Operator selector cards ------------------------------------------ */
+.operator-card {
+    background-color: var(--nord0);
+    border: 1px solid var(--nord2);
+    border-radius: 6px;
+    padding: 0.85rem;
+    margin-bottom: 0.6rem;
+    transition: border-color 0.15s ease;
+}
+
+.operator-card:hover {
+    border-color: var(--nord3);
+}
+
+.operator-card.operator-target {
+    border-left: 3px solid var(--nord8);
+}
+
+.operator-card.operator-symbol {
+    border-left: 3px solid var(--nord14);
+}
+
+.operator-card.operator-condition {
+    border-left: 3px solid var(--nord13);
+}
+
+.operator-card.operator-exclude {
+    border-left: 3px solid var(--nord3);
+}
+
+.feature-name {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--nord5);
+    margin-bottom: 0.4rem;
+}
+
+/* ---- Empty states ----------------------------------------------------- */
+.empty-state {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    color: var(--nord3);
+}
+
+.empty-state .empty-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.empty-state p {
+    font-size: 0.88rem;
+    max-width: 400px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* ---- Loading spinner -------------------------------------------------- */
+._dash-loading-callback {
+    background-color: transparent !important;
+}
+
+/* ---- Feature grid (2 cols × 3 rows) --------------------------------- */
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+}
+
+/* ---- Page header with inline controls -------------------------------- */
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+}
+
+.page-header .page-title {
+    margin-bottom: 0;
+}
+
+.page-header .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ---- Fitness metric card --------------------------------------------- */
+.fitness-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.35rem 0.85rem;
+    background-color: var(--nord1);
+    border: 1px solid var(--nord2);
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.fitness-inline .fitness-label {
+    color: var(--nord4);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.fitness-inline .fitness-value {
+    color: var(--nord8);
+    font-weight: 700;
+}
+
+/* ---- Two-panel layout (settings left, content right) ----------------- */
+.panel-layout {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.panel-left {
+    flex: 0 0 360px;
+    max-width: 380px;
+    min-width: 280px;
+}
+
+.panel-right {
+    flex: 1;
+    min-width: 0;
+}
+
+/* ---- Disabled button override ---------------------------------------- */
+.btn:disabled,
+.btn.disabled {
+    opacity: 0.35 !important;
+    cursor: not-allowed;
+    pointer-events: auto;
+}
